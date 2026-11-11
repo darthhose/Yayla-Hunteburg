@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yayla Kebab Haus – Speisekarte</title>
+<style>
+  :root { --gelb:#f2c418; --gruen:#0f8a4f; --blau:#1c2a7a; --bg:#fffdf3; --text:#222; --karte:#fff; --linie:#e8dfb5; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.4; }
+  header { background:var(--gelb); text-align:center; padding:24px 16px 16px; }
+  header h1 { margin:0; font-size:2.6rem; color:var(--gruen); font-style:italic; font-family:Georgia, serif; }
+  header .sub { font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#333; }
+  header .slogan { font-style:italic; color:#444; margin-top:4px; }
+  nav { position:sticky; top:0; z-index:10; background:var(--blau); padding:8px; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
+  nav a { color:#fff; text-decoration:none; font-size:.9rem; padding:5px 10px; border-radius:14px; background:rgba(255,255,255,.12); }
+  nav a:hover { background:var(--gelb); color:#000; }
+  .search { max-width:900px; margin:16px auto 0; padding:0 16px; }
+  .search input { width:100%; padding:10px 14px; font-size:1rem; border:2px solid var(--linie); border-radius:8px; }
+  main { max-width:900px; margin:0 auto; padding:8px 16px 40px; }
+  section { margin-top:28px; }
+  h2 { color:var(--gruen); border-bottom:3px solid var(--gelb); padding-bottom:4px; margin-bottom:4px; }
+  .hinweis { font-size:.9rem; color:#555; margin:4px 0 8px; }
+  .item { display:flex; gap:10px; align-items:baseline; background:var(--karte); border-bottom:1px solid var(--linie); padding:8px 6px; }
+  .nr { min-width:2.4em; color:#999; font-size:.85rem; text-align:right; }
+  .txt { flex:1; }
+  .name { font-weight:600; }
+  .desc { font-size:.88rem; color:#555; }
+  .preis { font-weight:700; white-space:nowrap; text-align:right; }
+  .preis small { display:block; font-weight:400; color:#777; font-size:.72rem; }
+  .preise2 { display:flex; gap:14px; }
+  footer, .info { max-width:900px; margin:0 auto; padding:0 16px; }
+  .box { background:var(--gelb); border-radius:10px; padding:14px 18px; margin:20px 0; }
+  .box h3 { margin:0 0 6px; color:var(--blau); }
+  .box table { border-collapse:collapse; }
+  .box td { padding:2px 14px 2px 0; }
+  .allergene { font-size:.78rem; color:#555; border-top:1px solid var(--linie); padding:16px 0 40px; }
+  .hidden { display:none !important; }
+  @media print { nav, .search { display:none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Yayla</h1>
+  <div class="sub">Kebab Haus</div>
+  <div class="slogan">… fühl mich fast wie zu Haus!</div>
+</header>
+
+<nav id="nav"></nav>
+
+<div class="search"><input id="suche" type="search" placeholder="Gericht suchen (Name, Nummer oder Zutat) …"></div>
+
+<main id="menue"></main>
+
+<div class="info">
+  <div class="box">
+    <h3>Lieferservice</h3>
+    <div>Lieferservice von 17:00 – 21:00 Uhr · Tel. <strong>05475 548 99 33</strong></div>
+    <table>
+      <tr><td>Lieferung ab einem Bestellwert von</td><td></td><td></td></tr>
+      <tr><td>ab 20,-</td><td>in Hunteburg</td><td>Preis: 2,00</td></tr>
+      <tr><td>ab 25,-</td><td>2–5 km</td><td>Preis: 3,00</td></tr>
+      <tr><td>ab 30,-</td><td>ab 5 km</td><td>Preis: 4,00</td></tr>
+    </table>
+    <div>für Firmen kostenlos</div>
+  </div>
+  <div class="box">
+    <h3>Öffnungszeiten</h3>
+    <table>
+      <tr><td>Mo</td><td>Ruhetag</td></tr>
+      <tr><td>Di – Sa</td><td>12 – 22 Uhr</td></tr>
+      <tr><td>So, Feiertage</td><td>13 – 22 Uhr</td></tr>
+    </table>
+    <p style="margin:8px 0 0">Yayla Kebab Haus · Herringhauser Str. 4 · 49163 Hunteburg</p>
+  </div>
+</div>
+
+<footer>
+  <div class="allergene">
+    <strong>Allergene:</strong> A = Weizen; B = Roggen; C = Gerste; D = Krebstiere; E = Eier; F = Fische; G = Sojabohnen; H = Milch; I = Sellerie; J = Senf; K = Sesamsamen; L = Schwefeldioxid/Sulfite; M = Lupinen; N = Weichtiere.<br>
+    <strong>Zusatzstoffe:</strong> 1 = Farbstoffe; 2 = Konservierungsstoff; 3 = Antioxidationsmittel; 4 = Geschmacksverstärker; 5 = geschwefelt; 6 = geschwärzt; 7 = Phosphat; 8 = Milcheiweiß; 9 = koffeinhaltig; 10 = chininhaltig; 11 = Süßungsmittel; 12 = gewachst; 13 = Formfleisch-Vorderschinken; Drehspieß aus gehacktem Putenfleisch mit Haut und Rindfleisch.<br>
+    Speisen und Abbildungen ähnlich. Irrtümer vorbehalten! Vorherige Speisekarten verlieren ihre Gültigkeit. Stand 2026.
+  </div>
+</footer>
+
+<script>
+// Preise als Strings, exakt wie auf der Karte. "p" = Preis, "p2" = zweiter Preis (XXL), "pl" = Beschriftung
+const KARTE = [
+ { id:"kebab", titel:"Kebab Spezialitäten", spalten:["Normal","XXL"], items:[
+  ["1","Kebab","Drehspieß, Salat & Soße","7,50","10,00"],
+  ["2","Vegetarischer Kebab","Salat & Soße","7,00","9,00"],
+  ["3","Kebab Box","Drehspieß, Pommes & Soße in der Box","7,50","8,50"],
+  ["4","Kebab Teller","Drehspieß, Salat, Pommes & Soße","12,50","14,50"],
+  ["5","Kebab Teller Spezial","Drehspieß, Spezialsoße, überbacken, Pommes","15,00"],
+  ["6","Hähnchen Teller","Hähnchenbrust, Salat, Spezialsoße, Pommes","15,00"]
+ ]},
+ { id:"lahmacun", titel:"Lahmacun – türkische Hackfleischpizza", items:[
+  ["7","Türkische Pizza Vital","Salat, Zwiebeln, Hirtenkäse in Salzlake & Soße","9,00"],
+  ["8","Türkische Pizza Spezial","Drehspieß, Salat, Zwiebeln & Soße","10,00"]
+ ]},
+ { id:"duerum", titel:"Dürüm", items:[
+  ["9","Dürüm Vegetarischer Wrap","mit Salat, Zwiebeln, Hirtenkäse & Soße","9,00"],
+  ["10","Dürüm Kebab Wrap","mit Drehspieß, Salat, Zwiebeln & Soße","10,00"],
+  ["11","Dürüm Thunfisch Wrap","mit Thunfisch, Salat, Zwiebeln & Soße","10,00"]
+ ]},
+ { id:"rollo", titel:"Rollo Spezialitäten", items:[
+  ["12","Rollo Kebab","mit Drehspieß, Salat, Zwiebeln, Soße & Käse","12,00"],
+  ["13","Rollo Thunfisch","mit Thunfisch, Salat, Zwiebeln, Soße & Käse","12,00"],
+  ["14","Rollo „Hunteburg“","mit Salami, Putenschinken, Salat, Zwiebeln, Soße & Käse","12,00"],
+  ["15","Rollo Hawaii","mit Schinken, Ananas, Salat, Zwiebeln, Soße & Käse","12,00"],
+  ["16","Rollo Vegetarisch","mit Salat, Zwiebeln, Hirtenkäse, Soße & Käse","12,00"]
+ ]},
+ { id:"schnitzel", titel:"Schnitzelparade", items:[
+  ["17","Putenschnitzel Wiener Art","mit Pommes & Salat","10,00"],
+  ["18","Champignonhähnchenschnitzel","mit Jägersoße, Pommes & Salat","12,00"],
+  ["19","Paprikahähnchenschnitzel","mit Paprikasoße, Pommes & Salat","12,00"],
+  ["21","Hawaiihähnchenschnitzel","mit Putenschinken, Ananas, Käse überbacken, Pommes & Salat","13,00"],
+  ["22","Hähnchenschnitzel Spezial","mit Spezialsoße, Putenschinken, Käse überbacken, Pommes & Salat","13,00"],
+  ["23","Hähnchenschnitzel „Hunteburg“","mit Spezialsoße, Käse überbacken, Pommes & Salat","13,00"]
+ ]},
+ { id:"grill", titel:"Grill + Snacks", items:[
+  ["24","Pommes","","3,50"],
+  ["25","Hamburger","","5,50"],
+  ["26","Cheeseburger","","6,00"],
+  ["27","Pommes und Nuggets","","8,00"]
+ ]},
+ { id:"pizza", titel:"Pizza", hinweis:"Alle Pizzen ø 28 cm, mit Oregano. Kleine Pizza (ø 24 cm): 1,00 Abzug. Jede weitere Zutat: 2,00.", items:[
+  ["30","Pizza Margherita","Tomatensoße, Käse","9,00"],
+  ["31","Pizza Salami","Tomatensoße, Käse, Rindersalami","10,00"],
+  ["32","Pizza Schinken","Tomatensoße, Käse, Putenschinken","10,00"],
+  ["33","Pizza Pilze","Tomatensoße, Käse, frische Pilze","10,00"],
+  ["34","Pizza Salami-Schinken","Tomatensoße, Käse, Rindersalami, Putenschinken","11,00"],
+  ["35","Pizza Salami-Pilze","Tomatensoße, Käse, Rindersalami, frische Pilze","11,00"],
+  ["36","Pizza Mozzarella","Tomatensoße, Käse, frische Tomaten, Mozzarella","10,50"],
+  ["37","Pizza Hawaii","Tomatensoße, Käse, Putenschinken, Ananas","11,00"],
+  ["38","Pizza Vegetarisch","Tomatensoße, Käse, Broccoli, Spinat, Pilze, Zwiebeln","11,00"],
+  ["39","Pizza Toscana","Tomatensoße, Käse, Rindersalami, Putenschinken, Zwiebeln, Paprika","11,50"],
+  ["40","Pizza Quattro Stagioni","Tomatensoße, Käse, Rindersalami, Putenschinken, Pilze, Paprika","11,50"],
+  ["41","Pizza Thunfisch-Zwiebel","Tomatensoße, Käse, Thunfisch, Zwiebeln","11,00"],
+  ["42","Pizza Nefis","Tomatensoße, Käse, Thunfisch, Paprika, Oliven","9,50"],
+  ["43","Pizza Chef","Kebabfleisch, Pilze, Broccoli, Paprika, Zwiebeln, Holländische Kräutersoße","13,00"],
+  ["44","Pizza Agit","Tomatensoße, Käse, Drehspieß, Zwiebeln","12,00"],
+  ["45","Pizza Hunteburg","Tomatensoße, Käse, Drehspieß, Thunfisch, Peperoni, Zwiebeln","13,00"],
+  ["46","Pizza Gladiatore","Tomate, Käse, frische Champignons, Putenschinken, Thunfisch in Öl","13,00"],
+  ["47","Pizza Suçuk","Tomatensoße, Käse, Suçuk, Hirtenkäse, Paprika","12,50"],
+  ["48","Pizza VIP","Kräutersoße, Käse, Drehspieß, Pilze, Peperoni, Zwiebeln","13,00"],
+  ["49","Pizza „Yayla“","Tomatensoße, Käse, Drehspieß, Pilze, Paprika, Zwiebeln","13,00"],
+  ["50","Pizza Suçuk 2","Tomatensoße, Käse, Suçuk, Pilze, Paprika, Oliven","12,50"],
+  ["51","Pizza Kebab Spezial","Tomatensoße, Käse, Drehspieß, Broccoli, Zwiebeln, Hollandaise","13,00"],
+  ["52","Pizza Chicken","Tomatensoße, Käse, Hähnchenfleisch, Pilze, Zwiebeln, Hollandaise","14,00"],
+  ["53","Pizza Chicken Hawaii","Tomatensoße, Käse, Hähnchenfleisch, Tomaten, Ananas","14,00"],
+  ["101","Chilli Cheese Pizza","Tomatensoße, Drehspieß, Chilli-Cheese-Soße, Zwiebeln, Hollandaise, Käse","14,00"],
+  ["102","Pizza alle Verdure","Tomate, Käse, gegrillte Auberginen u. Zucchini, Knoblauch, Oregano","12,00"],
+  ["103","Pizza Chicken","Tomatensoße, Käse, Hähnchenfleisch, Hollandaise, scharf","13,50"],
+  ["104","Pizza Ebucan","Tomatensoße, Käse, Thunfisch, Ananas, Hirtenkäse, Hollandaise, scharf","13,00"],
+  ["105","Pizza Amed","Tomatensoße, Käse, Thunfisch, Zwiebeln, Hollandaise, Broccoli","13,00"],
+  ["","Familien Pizza","45 cm Grundpizza, +4,– Fleischprodukte, +3,– Vegetarische Produkte","20,00"],
+  ["","Pizzablech","einfach belegt für 6–8 Personen","45,00"]
+ ]},
+ { id:"calzone", titel:"Calzone", items:[
+  ["54","Calzone Kebab Spezial","Tomatensoße, Käse, Drehspieß, Hirtenkäse","13,00"],
+  ["55","Calzone Kebab","Tomatensoße, Käse, Drehspieß, Pilze, Paprika, Zwiebeln","13,00"],
+  ["56","Calzone","Tomatensoße, Käse, Rindersalami, Putenschinken, Pilze, Paprika","13,00"],
+  ["57","Calzone Tonno","Tomatensoße, Käse, Thunfisch, Zwiebeln","13,00"]
+ ]},
+ { id:"broetchen", titel:"Gefüllte Pizzabrötchen", hinweis:"Extra Auswahl nach Anfrage.", items:[
+  ["58","Tzaziki-, Cocktail- oder Kräutersoße","","7,00"],
+  ["59","Salami, Käse","Rindersalami","8,00"],
+  ["60","Schinken, Käse","Putenschinken","8,00"],
+  ["61","Kebab, Käse","Drehspieß","8,50"],
+  ["62","Thunfisch","Käse","8,50"],
+  ["63","Suçuk","Käse","8,00"],
+  ["64","Soße für Brötchen","","2,00"]
+ ]},
+ { id:"nudeln", titel:"Nudel-Spezialitäten", hinweis:"Überbacken zzgl. 2,00.", items:[
+  ["65","Spaghetti Carbonara","mit Putenschinken, Ei und Sahnesoße","10,00"],
+  ["66","Spaghetti Arrabiata","mit Tomatensoße, Pilze, Paprika, Putenschinken – scharf","10,00"],
+  ["67","Spaghetti Suçuk","mit Tomaten-Sahnesoße, Suçuk, Tomaten, Käse","11,00"],
+  ["68","Rigatoni Kebab","mit Tomatensoße, Pilze, Zwiebeln, Drehspieß","11,00"],
+  ["69","Rigatoni Tonno","mit Thunfisch, Käse, Sahnesoße","11,00"]
+ ]},
+ { id:"salate", titel:"Salate", items:[
+  ["70","Bauern-Salat","Eisbergsalat, Tomaten, Gurken, Zwiebeln","9,00"],
+  ["71","Mozzarella-Salat","Eisbergsalat, Tomaten, Mozzarella, Olivenöl","10,50"],
+  ["72","Thunfisch-Salat","Eisbergsalat, Tomaten, Gurken, Mais, Thunfisch, Zwiebeln, Hirtenkäse","11,00"],
+  ["73","Hawaii-Salat","Eisbergsalat, Gurken, Mais, Putenschinken, Ananas, Hirtenkäse","11,00"],
+  ["74","Kebab-Salat","Eisbergsalat, Tomaten, Gurken, Mais, Karotten, Zwiebeln, Drehspieß, Hirtenkäse","12,00"],
+  ["75","Hunteburg-Salat","Eisbergsalat, Tomaten, Gurken, Mais, Paprika, Oliven, Karotten, Hirtenkäse","12,00"],
+  ["76","Della Casa","gem. Blattsalat, Tomaten, Karotten, Gurken, Thunfisch, Ei, Putenschinken, Käse","13,00"],
+  ["77","Insalata Pollo","gem. Blattsalat, Tomaten, Gurken, Hähnchenbrustfilet, Mais, Paprika, Joghurtdressing","13,00"]
+ ]},
+ { id:"getraenke", titel:"Getränke", hinweis:"Zzgl. 0,25 Pfand. Keine Pfandannahme!", items:[
+  ["","Coca-Cola, Cola-Light, Fanta, Sprite, Mezzo-Mix, Uludag","0,33 l","2,50"],
+  ["","Mineralwasser","0,33 l","2,50"],
+  ["","Ayran","0,33 l","2,50"],
+  ["","Flasche zum Mitnehmen","1,0 l","4,00"]
+ ]}
+];
+
+const menue = document.getElementById('menue');
+const nav = document.getElementById('nav');
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+KARTE.forEach(k => {
+  const a = document.createElement('a'); a.href = '#'+k.id; a.textContent = k.titel.split(' – ')[0]; nav.appendChild(a);
+  let h = `<section id="${k.id}"><h2>${esc(k.titel)}</h2>`;
+  if (k.hinweis) h += `<div class="hinweis">${esc(k.hinweis)}</div>`;
+  k.items.forEach(i => {
+    const [nr,name,desc,p1,p2] = i;
+    let preis = p2
+      ? `<div class="preise2"><div class="preis"><small>${k.spalten[0]}</small>${p1}</div><div class="preis"><small>${k.spalten[1]}</small>${p2}</div></div>`
+      : `<div class="preis">${p1}</div>`;
+    h += `<div class="item"><div class="nr">${nr}</div><div class="txt"><div class="name">${esc(name)}</div>${desc?`<div class="desc">${esc(desc)}</div>`:''}</div>${preis}</div>`;
+  });
+  menue.insertAdjacentHTML('beforeend', h + '</section>');
+});
+
+document.getElementById('suche').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('.item').forEach(el => el.classList.toggle('hidden', q && !el.textContent.toLowerCase().includes(q)));
+  document.querySelectorAll('main section').forEach(s => s.classList.toggle('hidden', q && !s.querySelector('.item:not(.hidden)')));
+});
+</script>
+</body>
+</html>
